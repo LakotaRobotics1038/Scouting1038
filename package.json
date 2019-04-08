@@ -1,0 +1,23 @@
+{
+  "name": "Scouting1038",
+  "version": "1.0.0",
+  "description": "Scouting website for 2020 comp season",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LakotaRobotics1038/Scouting1038.git"
+  },
+  "keywords": [],
+  "author": "Sam Burkhard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LakotaRobotics1038/Scouting1038/issues"
+  },
+  "homepage": "https://github.com/LakotaRobotics1038/Scouting1038#readme"
+}
