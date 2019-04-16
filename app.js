@@ -11,7 +11,7 @@ var homeRouter = require('./routes/home');
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://samburkhard:nicks_man_bun@teams-xxusj.mongodb.net/test?retryWrites=true';
+var mongoDB = 'mongodb+srv://<username>:<password>@teams-xxusj.mongodb.net/test?retryWrites=true';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
