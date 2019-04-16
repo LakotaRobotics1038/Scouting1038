@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -10,11 +11,21 @@ var homeRouter = require('./routes/home');
 
 var app = express();
 
-var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://lakotarobotics:nicks_man_bun@teams-xxusj.mongodb.net/test?retryWrites=true';
-mongoose.connect(mongoDB, { useNewUrlParser: true });
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error'));
+/// MYSQL Code
+var db = mysql.createConnection ({
+  host: 'localhost',
+  port: '8888',
+  user: 'sam',
+  password: 'sam-php-password',
+  database: 'scouting1038'
+});
+db.connect((err) => {
+  if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
+});
+/// END OF MYSQL CODE
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
