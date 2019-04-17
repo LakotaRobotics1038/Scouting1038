@@ -11,7 +11,7 @@ var scoutingRouter = require('./routes/scouting');
 var app = express();
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://lakotarobotics:nicks_man_bun@events-xxusj.mongodb.net/test?retryWrites=true';
+var mongoDB = 'mongodb://127.0.0.1/Scouting1038';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
