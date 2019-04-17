@@ -5,7 +5,7 @@ var AllianceSchema = new Schema(
   {
     name: {
       type: String,
-      enum: 'Red, Blue'
+      enum: ['Red', 'Blue']
     }
   }
 );

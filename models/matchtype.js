@@ -5,7 +5,7 @@ var MatchTypeSchema = new Schema(
   {
     name: {
       type: String,
-      enum: "Practice, Qualification, Elimination"
+      enum: ['Practice', 'Qualification', 'Elimination']
     }
   }
 );
