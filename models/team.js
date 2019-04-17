@@ -1,10 +1,11 @@
 var mongoose = require('mongoose');
-
 var Schema = mongoose.Schema;
 
 var TeamSchema = new Schema(
   {
-    team_number: { type: Number, required: true }
+    number: { type: Number, required: true },
+    name: { type: String },
+    description: { type: String }
   }
 );
 
