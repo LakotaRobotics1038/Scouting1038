@@ -9,7 +9,7 @@ var event_controller = require('../controllers/eventController');
 /// TEAM ROUTES ///
 
 // Get scouting home page
-router.get('/', team_controller.index);
+router.get('/', team_controller.team_list);
 
 // GET request for creating team
 router.get('/team/create', team_controller.team_create_get);
@@ -31,9 +31,6 @@ router.post('/team/:id/update', team_controller.team_update_post);
 
 // GET request for one team
 router.get('/team/:id', team_controller.team_details);
-
-// GET request for list of all teams
-router.get('/teams', team_controller.team_list);
 
 /// MATCH ROUTES ///
 
@@ -59,6 +56,6 @@ router.post('/match/:id/update', match_controller.match_update_post);
 router.get('/match/:id', match_controller.match_details);
 
 // GET request for list of all matches
-router.get('/match', match_controller.match_list);
+router.get('/matches', match_controller.match_list);
 
 module.exports = router;

@@ -1,12 +1,16 @@
 var Team = require('../models/team');
 
-exports.index = function (req, res) {
-  res.send('NOT IMPLEMENTED: Home Page');
-};
+var async = require('async');
 
 // Display list of all teams
 exports.team_list = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team List');
+  async.parallel({
+    team_count: function(callback) {
+      Team.countDocuments({}, callback);
+    }
+  }, function(err, results) {
+    res.render('index', { title: 'Scouting Home', error: err, data: results});
+  });
 };
 
 // Display team details page
