@@ -19,7 +19,7 @@ Built with Node.js, HTML, CSS, and love
 3. Install required Node dependencies with `npm install`
 4. Run project with nodemon using `SET DEBUG=Scouting1038:* & npm start`
 
-### Running Node server with local database:
+### Running Node server with local database (Project is configured for this by default):
 
 
 #### Mac/Linux
