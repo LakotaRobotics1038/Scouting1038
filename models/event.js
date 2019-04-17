@@ -7,4 +7,13 @@ var EventSchema = new Schema(
   }
 );
 
+// Virtual for event URL
+EventSchema
+.virtual('url')
+.get(function () {
+  return 'scouting/events/' + this._id;
+  }
+);
+
+// Export Module
 module.exports = mongoose.model('Event', EventSchema);

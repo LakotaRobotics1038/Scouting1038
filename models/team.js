@@ -13,7 +13,7 @@ var TeamSchema = new Schema(
   TeamSchema
   .virtual('url')
   .get(function () {
-    return '/teams/' + this._id;
+    return '/scouting/teams/' + this._id;
     }
   );
 

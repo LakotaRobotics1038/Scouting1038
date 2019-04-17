@@ -10,4 +10,5 @@ var MatchTypeSchema = new Schema(
   }
 );
 
+// Export Module
 module.exports = mongoose.model('MatchType', MatchTypeSchema);

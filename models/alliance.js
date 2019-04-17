@@ -10,4 +10,13 @@ var AllianceSchema = new Schema(
   }
 );
 
+// Virtual for alliance URL
+Alliance
+.virtual('url')
+.get(function () {
+  return 'scouting/alliances/' + this._id;
+  }
+);
+
+// Export Module
 module.exports = mongoose.model('Alliance', AllianceSchema);

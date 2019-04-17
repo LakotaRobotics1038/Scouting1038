@@ -8,4 +8,13 @@ var MatchSchema = new Schema(
   }
 );
 
+// Virtual for match URL
+MatchSchema
+.virtual('url')
+.get(function () {
+  return '/scouting/matches/' + this._id;
+  }
+);
+
+// Export Module
 module.exports = mongoose.model('Match', MatchSchema);
