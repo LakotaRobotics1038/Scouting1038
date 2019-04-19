@@ -9,7 +9,7 @@ var ScoutMatchSchema = new Schema(
     score: {
       starting_position: { type: String, enum: ['Hab1', 'Hab2'], required: true},
       sandstorm: {
-        passed_hab_line: Bool,
+        passed_hab_line: Boolean,
         sandstorm_cargo: Number,
         sandstorm_hatch: Number
       },

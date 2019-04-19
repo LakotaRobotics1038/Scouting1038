@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var MatchSchema = new Schema(
   {
     number: { type: Number },
-    type: { type: Schema.Types.ObjectId, ref: 'MatchType'}
+    type: { type: String, enum: ['Practice', 'Qualification', 'Elimination']}
   }
 );
 

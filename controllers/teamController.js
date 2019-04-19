@@ -1,16 +1,8 @@
 var Team = require('../models/team');
 
-var async = require('async');
-
 // Display list of all teams
 exports.team_list = function (req, res) {
-  async.parallel({
-    team_count: function(callback) {
-      Team.countDocuments({}, callback);
-    }
-  }, function(err, results) {
-    res.render('index', { title: 'Scouting Home', error: err, data: results});
-  });
+  res.send('NOT IMPLEMENTED: Team create')
 };
 
 // Display team details page

@@ -5,6 +5,7 @@ var router = express.Router();
 var team_controller = require('../controllers/teamController');
 var match_controller = require('../controllers/matchController');
 var event_controller = require('../controllers/eventController');
+var scout_match_controller = require('../controllers/scoutMatchController');
 
 /// TEAM ROUTES ///
 
@@ -32,30 +33,12 @@ router.post('/team/:id/update', team_controller.team_update_post);
 // GET request for one team
 router.get('/team/:id', team_controller.team_details);
 
-/// MATCH ROUTES ///
+// SCOUTMATCH ROUTES ///
 
-// GET request for creating match
-router.get('/match/create', match_controller.match_create_get);
+// GET request for scouting match
+router.get('/scout/match', scout_match_controller.scoutMatch_create_get);
 
-// POST request for creating match
-router.post('/match/create', match_controller.match_create_post);
-
-// GET request to delete match
-router.get('/match/:id/delete', match_controller.match_delete_get);
-
-// POST request to delete match
-router.post('/match/:id/delete', match_controller.match_delete_post);
-
-// GET request to update match
-router.get('/match/:id/update', match_controller.match_update_get);
-
-// POST request to update match
-router.post('/match/:id/update', match_controller.match_update_post);
-
-// GET request for one match
-router.get('/match/:id', match_controller.match_details);
-
-// GET request for list of all matches
-router.get('/matches', match_controller.match_list);
+// POST request for scouting match
+router.post('/scout/match', scout_match_controller.scoutMatch_create_post);
 
 module.exports = router;
