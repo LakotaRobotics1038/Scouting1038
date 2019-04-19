@@ -12,33 +12,46 @@ var scout_match_controller = require('../controllers/scoutMatchController');
 // Get scouting home page
 router.get('/', team_controller.team_list);
 
-// GET request for creating team
-router.get('/team/create', team_controller.team_create_get);
-
-// POST request for creating team
-router.post('/team/create', team_controller.team_create_post);
-
-// GET request to delete team
-router.get('/team/:id/delete', team_controller.team_delete_get);
-
-// POST request to delete team
-router.post('/team/:id/delete', team_controller.team_delete_post);
-
-// GET request to update team
-router.get('/team/:id/update', team_controller.team_update_get);
-
-// POST request to update team
-router.post('/team/:id/update', team_controller.team_update_post);
-
 // GET request for one team
 router.get('/team/:id', team_controller.team_details);
 
-// SCOUTMATCH ROUTES ///
+/// MATCH ROUTES ///
+
+// Get match list
+router.get('/matches', match_controller.match_list);
+
+// GET request for match
+router.get('/match/:id', match_controller.match_details);
+
+/// EVENT ROUTES ///
+
+// Get match list
+router.get('/events', event_controller.event_list);
+
+// GET request for match
+router.get('/event/:id', event_controller.event_details);
+
+// scout_match ROUTES ///
+
+// GET request to display scouting forms
+router.get('/scouted', scout_match_controller.scout_match_list);
 
 // GET request for scouting match
-router.get('/scout/match', scout_match_controller.scoutMatch_create_get);
+router.get('/create', scout_match_controller.scout_match_create_get);
 
 // POST request for scouting match
-router.post('/scout/match', scout_match_controller.scoutMatch_create_post);
+router.post('/create', scout_match_controller.scout_match_create_post);
+
+// GET request for deleting scouted match
+router.get('/delete/:id', scout_match_controller.scout_match_delete_get);
+
+// POST request for deleting scouted match
+router.post('/delete/:id', scout_match_controller.scout_match_delete_post);
+
+// GET request for updating scouted match
+router.get('/update/:id', scout_match_controller.scout_match_update_get);
+
+// POST request for updating scouted match
+router.post('/update/:id', scout_match_controller.scout_match_update_post);
 
 module.exports = router;
