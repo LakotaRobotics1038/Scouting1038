@@ -8,13 +8,8 @@ block content
       label(for='team_number') Team Number:
       input.team_number.form-control(type='text', placeholder='Enter Team Number' name='team_number' required='true')
     div.form-group
-      label(for='team') Team:
-      select.author.form-control(type='select', placeholder='Choose a team' name='team' required='true')
-        for team in teams
-          if team
-            option(value=team._id selected=(team._id.toString()==scoutMatch.team ? 'selected' : false) ) #{team.number}
-          else 
-            option(value=team._id) #{team.number}
+      label(for='match_number') Match Number:
+      input.team_number.form-control(type='text', placeholder='Enter Match Number' name='match_number' required='true')
     button.btn.btn-primary(type='submit') Submit
 
   if errors 

@@ -3,11 +3,14 @@ var Schema = mongoose.Schema;
 
 var ScoutMatchSchema = new Schema(
   {
-    team: { type: Schema.Types.ObjectId, ref: 'Team', required: true },
-    match: { type: Schema.Types.ObjectId, ref: 'Match', required: true},
-    alliance: { type: String, enum: ['Red', 'Blue'], required: true },
+    // team: { type: Schema.Types.ObjectId, ref: 'Team', required: true },
+    // match: { type: Schema.Types.ObjectId, ref: 'Match', required: true},
+    // alliance: { type: String, enum: ['Red', 'Blue'], required: true },
+    team_number: { type: Number, required: true},
+    match_number: { type: Number, required: true },
+    alliance: { type: String, enum: ['Red', 'Blue']},
     score: {
-      starting_position: { type: String, enum: ['Hab1', 'Hab2'], required: true},
+      starting_position: { type: String, enum: ['Hab1', 'Hab2']},
       sandstorm: {
         passed_hab_line: Boolean,
         sandstorm_cargo: Number,
@@ -18,7 +21,7 @@ var ScoutMatchSchema = new Schema(
         teleop_hatch: Number
       },
       engame: {
-        endgame_level: { type: String, enum: ['None', 'Hab1', 'Hab2', 'Hab3'], required: true }
+        endgame_level: { type: String, enum: ['None', 'Hab1', 'Hab2', 'Hab3'] }
       }
     }
   }

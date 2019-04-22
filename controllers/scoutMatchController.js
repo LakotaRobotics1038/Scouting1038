@@ -12,22 +12,42 @@ exports.scout_match_list = function (req, res) {
 
 // Display match scouting form
 exports.scout_match_create_get = function (req, res, next) {
-  async.parallel({
-          teams: function(callback) {
-              Team.find(callback);
-          },
-          matches: function(callback) {
-              Match.find(callback);
-          },
-      }, function(err, results) {
-          if (err) { return next(err); }
-          res.render('scout_match_form', { title: 'Scout New Match', teams: results.teams, matches: results.matches });
-      });};
+  res.render('scout_match_form', { title: 'Scout New Match'});
+};
 
 // Handle match scouting form on POST
-exports.scout_match_create_post = function (req, res) {
-  res.send('NOT IMPLEMENTED: Match Scouting form post');
-};
+exports.scout_match_create_post = [
+  // Validate Feilds
+  body('team_number', 'Team number must not be empty.').isLength({ min: 1 }).trim(),
+  body('match_number', 'Match number must not be empty.').isLength({ min: 1 }).trim(),
+
+  sanitizeBody('*').escape(),
+
+  // Process request after validation and sanitization
+  (req, res, next) => {
+    // Extract validation errors from a request
+    var errors = validationResult(req);
+
+    // Create scoutMatch object with escaped and trimmed data
+    var scoutMatch = new ScoutMatch(
+      { team_number: req.body.team_number,
+        match_number: req.body.match_number
+      });
+
+    if(!errors.isEmpty()) {
+      // There are errors  Render from again with sanitized values/error messages
+      res.render('scout_match_form', { title: 'Scout New Match', team_number: team_number, errors: errors.array()});
+    } else {
+      scoutMatch.save(function(err) {
+        if (err) {
+          return next(err);
+        }
+        // Redirect to new scouted match
+        res.redirect('/scouting/');
+      });
+    }
+  }
+];
 
 // Display scouted match delete form
 exports.scout_match_delete_get = function (req, res) {
