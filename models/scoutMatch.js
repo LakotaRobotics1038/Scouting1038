@@ -5,7 +5,7 @@ var ScoutMatchSchema = new Schema(
   {
     team: { type: Schema.Types.ObjectId, ref: 'Team', required: true },
     match: { type: Schema.Types.ObjectId, ref: 'Match', required: true},
-    alliance: { type: Schema.Types.ObjectId, ref: 'Alliance', required: true},
+    alliance: { type: String, enum: ['Red', 'Blue'], required: true },
     score: {
       starting_position: { type: String, enum: ['Hab1', 'Hab2'], required: true},
       sandstorm: {
