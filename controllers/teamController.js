@@ -1,8 +1,9 @@
 var Team = require('../models/team');
+var ScoutMatch = require('../models/scoutMatch');
 
 // Display list of all teams
 exports.team_list = function (req, res, next) {
-  Team.find({}, 'number name description')
+  ScoutMatch.find({}, 'number')
     .exec(function (err, list_teams) {
       if (err) { return next(err); }
       res.render('list', { title: 'Team List', team_list: list_teams });

@@ -4,8 +4,6 @@ block content
   h1= title
   
   ul 
-    each team in team_list
+    each scoutedMatch in team_list
       li
-        a(href=team.url) #{team.number}
-        |  (#{team.name})
-        |  (#{team.description})
+        scoutedMatch.team_number
