@@ -1,21 +1,15 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+// team.js
 
-var TeamSchema = new Schema(
-  {
-    number: { type: Number, required: true },
-    name: { type: String },
-    description: { type: String }
-  }
-);
+    // import modules =====================
+    var mongoose = require('mongoose') // mongoose import
+    var Schema   = mongoose.Schema   // schema import from mongoose for models
 
-  // Virtual for team URL
-  TeamSchema
-  .virtual('url')
-  .get(function () {
-    return '/scouting/teams/' + this._id;
-    }
-  );
+    // define schema ======================
+    var TeamSchema = new Schema(
+      {
+        number: { type: Number, required: true },
+      }
+    )
 
-// Export Module
-module.exports = mongoose.model('Team', TeamSchema);
+    // export as model =====================
+    module.exports = mongoose.model('Team', TeamSchema)

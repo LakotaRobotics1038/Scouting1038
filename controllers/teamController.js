@@ -1,49 +1,46 @@
-var Team = require('../models/team');
+// teamController.js
 
-var async = require('async');
+    // set up ========================
+    var mongoose = require('mongoose')
+    var Team     = require('../models/team') // team model
 
-// Display list of all teams
-exports.team_list = function (req, res) {
-  async.parallel({
-    team_count: function(callback) {
-      Team.countDocuments({}, callback);
-    }
-  }, function(err, results) {
-    res.render('index', { title: 'Scouting Home', error: err, data: results});
-  });
-};
+    // calls =========================
+        // get all teams
+        exports.list_teams = function (req, res) {
 
-// Display team details page
-exports.team_details = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Details');
-};
+          // use mongoose to find all teams
+          Team.find(function(err, teams) {
 
-// Display team create form on GET
-exports.team_create_get = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Create GET');
-};
+            if (err)                         // if error, send error
+              res.send(err)
 
-// Handle team create form on POST
-exports.team_create_post = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Create POST');
-};
+            res.json(teams)                  // return teams in JSON format
+          })
+        }
 
-// Display team delete form on GET
-exports.team_delete_get = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Delete GET');
-};
+        // create team and send all teams after
+        exports.create_team = function (req, res) {
 
-// Handle team delete form on POST
-exports.team_delete_post = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Delete POST');
-};
+          // create team with data from AJAX from Angular
+          Team.create({
+            number: req.body.number,
+          }, function(err, team) {
+            if (err)                          // if error, send error
+              res.send(err)
 
-// Display team update form on GET
-exports.team_update_get = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Update GET');
-};
+            this.list_teams                   // return all teams
+          })
+        }
 
-// Handle team update form on POST
-exports.team_update_post = function (req, res) {
-  res.send('NOT IMPLEMENTED: Team Update POST');
-};
+        // delete team
+        exports.delete_team = function (req, res) {
+
+          Team.remove({
+            _id: req.params.team_id
+          }, function(err, team) {
+            if (err)                          // if error, send error
+              res.send(err)
+
+            this.list_teams                   // return all teams
+          })
+        }
