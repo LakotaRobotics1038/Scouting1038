@@ -2,7 +2,7 @@
 
     // set up ========================
     var mongoose = require('mongoose')
-    var Team     = require('../models/team') // team model
+    var Team     = require('../models/team.model') // team model
 
     // calls =========================
         // get all teams
