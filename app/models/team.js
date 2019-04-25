@@ -1,4 +1,4 @@
-// team.js
+// app/models/team.js
 
     // import modules =====================
     var mongoose = require('mongoose') // mongoose import
