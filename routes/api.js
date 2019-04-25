@@ -1,4 +1,4 @@
-// scouting.js
+// api.js
 
     // set up ========================
     var express         = require('express')

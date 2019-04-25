@@ -19,8 +19,8 @@
     app.use(methodOverride());
 
     // routes ========================
-    var scoutingRouter = require('./routes/scouting')
-    app.use('/scouting', scoutingRouter)
+    var apiRouter = require('./routes/api') // api router to handle api requests
+    app.use('/api', apiRouter)
 
     // start app with node server.js ======================================
     app.listen(port);
