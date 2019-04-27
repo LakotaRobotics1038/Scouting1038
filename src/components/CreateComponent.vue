@@ -20,17 +20,16 @@
 </template>
 
 <script>
-  export default {
+  module.exports = {
     data(){
       return {
         post:{}
       }
-    }
-  },
-  methods: {
-    addTeam(){
+    },
+    methods: {
+      addTeam(){
       console.log(this.team)
     }
   }
-  
+}
 </script>
