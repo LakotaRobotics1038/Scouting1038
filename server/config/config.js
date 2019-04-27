@@ -1,6 +1,6 @@
 // server/config/config.js
 
-    // configuration
+    // configuration ======================
     var config = {
       port: process.env.PORT || 3000,
       mongo: {

@@ -5,4 +5,4 @@
     var config   = require('./config')
 
     // configuration =================
-    mongoose.connect(config.mongo.url, { useNewUrlParser: true }) // connect to local mongoDB database
+    mongoose.connect(config.mongo.url, { useNewUrlParser: true }) // connect to mongoDB
