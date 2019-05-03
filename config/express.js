@@ -6,8 +6,9 @@
     var logger         = require('morgan')
     var methodOverride = require('method-override') // simulate DELETE and PUT (express4)
     var app            = express()                  // create our app w/ express
-    var routes         = require('../routes/api.route')
-
+    var teamRoutes     = require('../routes/teams.route')
+    var matchRoutes    = require('../routes/matches.route')
+    var scoreRoutes    = require('../routes/scores.route')
     // configuration =================
     app.use(logger('dev'));
     app.use(express.static(__dirname + '/public'))                 // set the static files location /public/img will be /img for users
@@ -17,7 +18,9 @@
     app.use(methodOverride())
 
     // routes =========================
-    app.use('/api', routes)
+    app.use('/teams', teamRoutes)
+    app.use('/matches', matchRoutes)
+    app.use('/scores', scoreRoutes)
 
     // export app =====================
     module.exports = app

@@ -8,12 +8,12 @@
     var MatchSchema = new Schema(
       {
         number: { type: Number, required: true },
-        team1: { type: Schema.Types.ObjectID, ref: 'Team'},
-        team2: { type: Schema.Types.ObjectID, ref: 'Team'},
-        team3: { type: Schema.Types.ObjectID, ref: 'Team'},
-        team4: { type: Schema.Types.ObjectID, ref: 'Team'},
-        team5: { type: Schema.Types.ObjectID, ref: 'Team'},
-        team6: { type: Schema.Types.ObjectID, ref: 'Team'}
+        team1: { type: Schema.Types.ObjectId, ref: 'Team'},
+        team2: { type: Schema.Types.ObjectId, ref: 'Team'},
+        team3: { type: Schema.Types.ObjectId, ref: 'Team'},
+        team4: { type: Schema.Types.ObjectId, ref: 'Team'},
+        team5: { type: Schema.Types.ObjectId, ref: 'Team'},
+        team6: { type: Schema.Types.ObjectId, ref: 'Team'}
       }
     )
 

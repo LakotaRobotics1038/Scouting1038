@@ -10,11 +10,15 @@
           res.send('NOT IMPLEMENTED: create score')
         }
 
+        exports.score_details = function (req, res) {
+          res.send('NOT IMPLEMENTED: score details')
+        }
+
         exports.update_score = function (req, res) {
           res.send('NOT IMPLEMENTED: update score')
         }
 
         // delete score
-        exports.delete_team = function (req, res) {
+        exports.delete_score = function (req, res) {
           res.send('NOT IMPLEMENTED: delete score')
         }

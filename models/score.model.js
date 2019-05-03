@@ -7,8 +7,8 @@
     // define schema ======================
     var ScoreSchema = new Schema(
       {
-        match: { type: Schema.Types.ObjectID, ref: 'Match'},
-        team: { type: Schema.Types.ObjectID, ref: 'Team'},
+        match: { type: Schema.Types.ObjectId, ref: 'Match'},
+        team: { type: Schema.Types.ObjectId, ref: 'Team'},
         sandstorm: {
           hatch: { type: Number },
           cargo: { type: Number }

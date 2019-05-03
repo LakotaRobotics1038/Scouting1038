@@ -1,4 +1,4 @@
-// routes/api.route.js
+// routes/team.route.js
 
     // set up ========================
     var express  = require('express')
@@ -7,13 +7,19 @@
 
     // routes ========================
         // get all teams
-        router.get('/teams', teamCtrl.list_teams)
+        router.get('/', teamCtrl.list_teams)
 
         // create team and send all teams after
-        router.post('/teams', teamCtrl.create_team)
+        router.post('/', teamCtrl.create_team)
+
+        // get team details for specific team
+        router.get('/:id', teamCtrl.team_details)
+
+        // update specifc team
+        router.put('/:id', teamCtrl.update_team)
 
         // delte team
-        router.delete('/teams/:team_id', teamCtrl.delete_team)
+        router.delete('/:id', teamCtrl.delete_team)
 
     // export ========================
     module.exports = router
