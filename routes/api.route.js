@@ -1,4 +1,4 @@
-// server/routes/api.route.js
+// routes/api.route.js
 
     // set up ========================
     var express  = require('express')

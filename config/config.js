@@ -1,4 +1,4 @@
-// server/config/config.js
+// config/config.js
 
     // configuration
     var config = {

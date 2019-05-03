@@ -1,4 +1,4 @@
-// server/config/mongoose.js
+// config/mongoose.js
 
     // set up =======================
     var mongoose = require('mongoose')

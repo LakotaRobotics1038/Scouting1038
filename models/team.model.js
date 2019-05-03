@@ -1,4 +1,4 @@
-// app/models/team.js
+// models/team.model.js
 
     // import modules =====================
     var mongoose = require('mongoose') // mongoose import
@@ -8,6 +8,7 @@
     var TeamSchema = new Schema(
       {
         number: { type: Number, required: true },
+        name: { type: String }
       }
     )
 

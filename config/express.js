@@ -1,4 +1,4 @@
-// server/config/express.js
+// config/express.js
 
     // set up =======================
     var express        = require('express')

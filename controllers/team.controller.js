@@ -1,4 +1,4 @@
-// app/controllers/teamController.js
+// controllers/teamController.js
 
     // set up ========================
     var mongoose = require('mongoose')
