@@ -6,11 +6,14 @@
     var matchCtrl = require('../controllers/match.controller.js') // controller import
 
     // routes ========================
-        // get all matches
-        router.get('/', matchCtrl.list_matches)
 
-        // create match and send all matches after
-        router.post('/', matchCtrl.create_match)
+        // calls for '/'
+        router.route('/')
+          // get all matches
+          .get(matchCtrl.list_matches)
+
+          // create match and send all matches after
+          .post(matchCtrl.create_match)
 
         // get match details for specific match
         router.get('/:id', matchCtrl.match_details)

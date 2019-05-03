@@ -6,11 +6,14 @@
     var teamCtrl = require('../controllers/team.controller.js') // controller import
 
     // routes ========================
-        // get all teams
-        router.get('/', teamCtrl.list_teams)
 
-        // create team and send all teams after
-        router.post('/', teamCtrl.create_team)
+        // calls for '/'
+        router.route('/')
+          // get all teams
+          .get(teamCtrl.list_teams)
+
+          // create team and send all teams after
+          .post(teamCtrl.create_team)
 
         // get team details for specific team
         router.get('/:id', teamCtrl.team_details)
